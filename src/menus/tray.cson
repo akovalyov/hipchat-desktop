@@ -1,0 +1,4 @@
+[
+  { label: '&Open', command: 'application:focus' }
+  { label: '&Quit', accelerator: 'Ctrl+Q', command: 'application:quit'}
+]

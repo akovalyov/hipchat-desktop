@@ -1,0 +1,52 @@
+{
+  "name": "hipchat-desktop",
+  "productName": "Hipchat Desktop",
+  "vendorName": "FOSS",
+  "version": "0.0.1-alpha.1",
+  "description": "Unofficial Hipchat desktop application",
+  "main": "./scripts/browser/main.js",
+  "dependencies": {
+    "babel-runtime": "^5.8.29",
+    "del": "^2.0.2",
+    "mustache": "^2.2.0",
+    "request": "^2.65.0",
+    "semver": "^5.0.3",
+    "yargs": "^3.29.0"
+  },
+  "scripts": {
+    "postinstall": "npm dedupe"
+  },
+  "license": "MIT",
+  "author": "Andrew Kovalyov <andrew.kovalyoff@gmail.com>",
+  "homepage": "https://github.com/akovalyov/-desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akovalyov/hipchat-desktop.git"
+  },
+  "crashReporter": {
+    "productName": "Hipchat Desktop",
+    "companyName": "FOSS",
+    "submitUrl": "http://localhost:1127/post"
+  },
+  "updater": {
+    "manifestUrl": "https://raw.githubusercontent.com/akovalyov/hipchat-desktop/deploy/src/package.json",
+    "download": {
+      "linux": {
+        "deb": {
+          "ia32": "https://github.com/akovalyov/hipchat-desktop/releases/download/v{{ version }}/{{ name }}-{{ version }}-i386.deb",
+          "x64": "https://github.com/akovalyov/hipchat-desktop/releases/download/v{{ version }}/{{ name }}-{{ version }}-amd64.deb"
+        },
+        "rpm": {
+          "ia32": "https://github.com/akovalyov/hipchat-desktop/releases/download/v{{ version }}/{{ name }}-{{ version }}-i386.rpm",
+          "x64": "https://github.com/akovalyov/hipchat-desktop/releases/download/v{{ version }}/{{ name }}-{{ version }}-x86_64.rpm"
+        }
+      }
+    }
+  },
+  "linux": {
+    "genericName": "Group chat and IM Unofficial client",
+    "categories": "Network;InstantMessaging;",
+    "keywords": "Hipchat;",
+    "section": "web"
+  }
+}

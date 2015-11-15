@@ -1,0 +1,30 @@
+[
+  {
+    label: '&File'
+    submenu: [
+      { label: '&Settings', command: 'application:show-settings' }
+      { label: '&Quit', accelerator: 'Ctrl+Q', command: 'application:quit' }
+    ]
+  }
+  {
+    label: '&View'
+    submenu: [
+      #buggy key bindings in atom
+      { label: '&Decrease on 10%', accelerator: 'Ctrl+-', command: 'application:decrease-zoom' }
+      { label: '&Encrease on 10%', accelerator: 'Ctrl+=', command: 'application:encrease-zoom' }
+      { label: '&Rezet zoom', accelerator: 'Ctrl+0', command: 'application:reset-zoom' }
+      { label: '&Webdev tools', command: 'window:toggle-dev-tools' }
+    ]
+  }
+
+  {
+    label: '&Help'
+    submenu: [
+      { label: 'Version {{ version }}', enabled: false }
+      { label: 'Check for Update', command: 'application:check-for-update' }
+      { type: 'separator' }
+      { label: '&Report Issue', command: 'application:open-url', url: 'https://github.com/akovalyov/hipchat-desktop/issues' }
+      { label: '&Suggest Feature', command: 'application:open-url', url: 'https://github.com/akovalyov/hipchat-desktop/issues' }
+    ]
+  }
+]

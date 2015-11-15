@@ -1,0 +1,200 @@
+html, body
+{
+    height: 100%;
+}
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow: none;
+  min-height: 100%;
+}
+
+h2 {
+  color: #2b6cc2;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-weight: 400;
+
+}
+
+a {
+  color: #2b6cc2;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#webview {
+  height: 100%;
+  width: 100%;
+}
+
+/**
+ This portion of code belongs to Hipchat. Inc.
+*/
+.loading-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  -ms-flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: #FFF;
+  align-items: center;
+  z-index: 1001;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.loading-message p:first-of-type {
+  margin-top: 25px;
+}
+.loading-message .loading-inner svg {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+.loading-message .loading-failed svg {
+  height: 105px;
+  width: 105px;
+}
+.loading-message .loading-pending img {
+  width: 105px;
+}
+
+.loading-message .loading-failed,
+.loading-message .loading-pending img,
+.loading-message.sad .loading-pending,
+.loading-message.no-anim .loading-pending svg {
+  display: none;
+}
+.loading-message .loading-pending,
+.loading-message.sad .loading-failed,
+.loading-message.no-anim .loading-pending img {
+  display: block;
+}
+
+#icon-hipchat-logo-sad .path1,
+#icon-hipchat-logo-sad .path2 {
+  fill: #205081;
+}
+
+#icon-hipchat-logo {
+  clip-path: url(#icon-hipchat-logo-clip);
+  fill: none;
+  stroke: #205081;
+}
+
+#icon-hipchat-logo path {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#hipchat_bubble {
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  -webkit-animation: bubble 3s forwards infinite;
+  animation: bubble 3s forwards infinite;
+}
+
+@-webkit-keyframes bubble {
+  0% {
+    stroke-dashoffset: 340;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke-dashoffset: 0;
+  }
+  90% {
+    stroke-dashoffset: -340;
+  }
+  100% {
+    stroke-dashoffset: -340;
+  }
+}
+
+@keyframes bubble {
+  0% {
+    stroke-dashoffset: 340;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke-dashoffset: 0;
+  }
+  90% {
+    stroke-dashoffset: -340;
+  }
+  100% {
+    stroke-dashoffset: -340;
+  }
+}
+
+#hipchat_smile {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  -webkit-animation: smile 3s forwards infinite;
+  animation: smile 3s forwards infinite;
+}
+
+@-webkit-keyframes smile {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  20% {
+    stroke-dashoffset: 100;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  90% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes smile {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  20% {
+    stroke-dashoffset: 100;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  90% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
