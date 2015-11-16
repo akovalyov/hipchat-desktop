@@ -2,7 +2,7 @@
   "name": "hipchat-desktop",
   "productName": "Hipchat Desktop",
   "vendorName": "FOSS",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2-dev",
   "description": "Unofficial Hipchat desktop application",
   "main": "./scripts/browser/main.js",
   "dependencies": {

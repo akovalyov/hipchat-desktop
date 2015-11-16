@@ -35,7 +35,9 @@
   <script type="text/javascript" src="../scripts/renderer/default.js"></script>
   <!-- Piwik -->
 <script type="text/javascript">
+  var manifest = JSON.parse(require('fs').readFileSync('src/package.json', 'utf-8'));
   var _paq = _paq || [];
+  _paq.push(['setCustomVariable', 1, 'appVersion',  manifest.version]);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
