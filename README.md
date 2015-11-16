@@ -8,6 +8,8 @@ Standalone app with hipchat website access.
 
 Please note, that this app is in early alpha, any issues/ideas/PRs are welcome!
 
+Not affiliated with Atlassian.
+
 #### Why
 
 Currently Linux client for Hipchat has a bunch of old issues which are not solved by Atlassian.
