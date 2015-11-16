@@ -5,7 +5,7 @@ env = require 'node-env-file'
 
 env(__dirname + '/../.env')
 # Upload every file in ./dist to GitHub
-gulp.task 'publish:github', ['pack:linux32:deb', 'pack:linux64:deb', 'pack:linux32:rpm', 'pack:linux64:rpm'], ->
+gulp.task 'publish:github', ['pack:linux32:deb', 'pack:linux64:deb'], ->
   if not process.env.GITHUB_TOKEN
     return console.warn 'GITHUB_TOKEN env var not set.'
 
