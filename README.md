@@ -1,5 +1,7 @@
 ## Hipchat desktop client
 
+![Ubuntu screenshot](doc/images/ubuntu_1024x768.png)
+
 #### What
 
 Standalone app with hipchat website access.
