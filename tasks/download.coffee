@@ -29,11 +29,7 @@ downloaded =
     , ->
       downloaded[dist] = true
 
-      # Also rename the .app on darwin
-      if dist is 'darwin64'
-        fs.rename './build/darwin64/Electron.app', './build/darwin64/' + manifest.productName + '.app', done
-      else
-        done()
+      done()
 
 # Download the Electron binaries for all platforms
 gulp.task 'download', [
