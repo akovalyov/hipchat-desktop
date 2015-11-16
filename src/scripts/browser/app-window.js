@@ -69,6 +69,7 @@ class AppWindow extends EventEmitter {
    */
   show() {
     this.window.show();
+    this.window.focus();
   }
 
   /**

@@ -7,11 +7,11 @@ var conf = new Configstore('hipchat-desktop', {
 });
 webframe.setZoomFactor(conf.get('zoom'));
 
-webview.addEventListener('did-stop-loading', function() {
+window.onload = function() {
   HC.AppDispatcher.register('server-data', function(data) {
     console.log(data);
     if ('message' in data) {
       ipc.send('message:received', 'Message received')
     }
   });
-});
+}

@@ -26,7 +26,7 @@ process.on('uncaughtException', error => console.error(error.stack));
     .help('h').alias('h', 'help').describe('h', 'Print this help message.')
     .epilog('Created with <3 by Andrew Kovalyov.')
     .argv;
-
+  
   // Print the version and exit
   if (argv.version) {
     console.log(`${app.getName()} ${app.getVersion()}`);

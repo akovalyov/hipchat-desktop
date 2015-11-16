@@ -33,6 +33,9 @@ class AppTray extends EventEmitter {
     });
 
     ipc.on('message:received', function(){
+      if(global.application.mainWindow.window.isFocused()){
+        return;
+      }
       var image = 'tray-attention.png'
       tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
     });
