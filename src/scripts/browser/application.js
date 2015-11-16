@@ -74,14 +74,25 @@ class Application extends EventEmitter {
   onTrayClicked() {
     this.toggleVisibility();
   }
+
+  markTrayNeedsAtention() {
+    if (this.mainWindow.window.isFocused()) {
+      return;
+    }
+    var image = 'tray-attention.png'
+    this.tray.tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
+  }
+  markTrayClear() {
+    var image = 'tray.png'
+    this.tray.tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
+  }
   assignEvents(menu) {
     // Handle application events
     menu.on('application:quit', ::app.quit);
-    menu.on('application:focus', function(){
+    menu.on('application:focus', function() {
       global.application.mainWindow.show();
     });
-    menu.on('application:show-settings', function() {
-    });
+    menu.on('application:show-settings', function() {});
 
     menu.on('application:open-url', function(menuItem) {
       shell.openExternal(menuItem.url);
@@ -96,13 +107,13 @@ class Application extends EventEmitter {
         })
         .catch(::console.error);
     });
-    menu.on('application:encrease-zoom', function(){
+    menu.on('application:encrease-zoom', function() {
       global.application.mainWindow.window.webContents.send('zoom:encrease');
     });
-    menu.on('application:decrease-zoom', function(){
+    menu.on('application:decrease-zoom', function() {
       global.application.mainWindow.window.webContents.send('zoom:decrease');
     });
-    menu.on('application:reset-zoom', function(){
+    menu.on('application:reset-zoom', function() {
       global.application.mainWindow.window.webContents.send('zoom:reset');
     });
     // Handle window events

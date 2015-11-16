@@ -52,6 +52,10 @@ class AppWindow extends EventEmitter {
       this.hide();
     });
 
+    browserWindow.on('show', function(){
+        this.focus();
+    });
+
     return browserWindow;
   }
 
@@ -69,7 +73,7 @@ class AppWindow extends EventEmitter {
    */
   show() {
     this.window.show();
-    this.window.focus();
+    this.focus();
   }
 
   /**

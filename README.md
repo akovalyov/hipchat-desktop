@@ -18,7 +18,7 @@ The short list is:
 
 - [Shortcuts don't work in non-English layout](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/4566565-non-english-layout-does-not-let-copy-paste)
 
-- UI is not up to date compared to Web and OS X app.
+- [UI is not up to date compared to Web and OS X app.](https://flowdock.uservoice.com/forums/36827-general/suggestions/5366511-add-a-linux-desktop-app)
 
 #### Why not Chromium/Firefox app
 

@@ -29,6 +29,7 @@ manifest = require '../src/package.json'
         '--architecture ' + archName
         '--rpm-os linux'
         '--name ' + manifest.name
+        '--deb-no-default-config-files'
         '--force' # Overwrite existing files
         '--after-install ./build/resources/linux/after-install.sh'
         '--after-remove ./build/resources/linux/after-remove.sh'
@@ -61,7 +62,7 @@ manifest = require '../src/package.json'
 
         # Package the app
 
-        async.apply cp.exec, 'fpm ' + args.join(' ')
+        async.apply cp.exec, 'bundle exec fpm ' + args.join(' ')
       ], done
 
 # Pack for all the platforms

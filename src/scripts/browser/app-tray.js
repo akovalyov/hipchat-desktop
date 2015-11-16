@@ -27,17 +27,12 @@ class AppTray extends EventEmitter {
     tray.setToolTip(settings.description);
     tray.setContextMenu(contextMenu);
     tray.on('clicked', function() {
-      var image = 'tray.png'
-      tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
+      global.application.markTrayClear();
       global.application.onTrayClicked();
     });
 
     ipc.on('message:received', function(){
-      if(global.application.mainWindow.window.isFocused()){
-        return;
-      }
-      var image = 'tray-attention.png'
-      tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
+      global.application.markTrayNeedsAtention();
     });
 
     return tray;
