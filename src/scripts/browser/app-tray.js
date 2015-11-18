@@ -1,7 +1,5 @@
-import Tray from 'tray';
+import { Tray, Menu, ipcMain as ipc } from 'electron';
 import path from 'path';
-import Menu from 'menu';
-import ipc from 'ipc';
 import EventEmitter from 'events';
 
 class AppTray extends EventEmitter {

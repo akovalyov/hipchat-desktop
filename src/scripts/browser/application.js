@@ -1,9 +1,8 @@
-import app from 'app';
+import {app, BrowserWindow} from 'electron';
 import path from 'path';
 import shell from 'shell';
 
 import EventEmitter from 'events';
-import BrowserWindow from 'browser-window';
 
 import AppMenu from './app-menu';
 import AppWindow from './app-window';

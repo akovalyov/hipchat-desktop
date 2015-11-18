@@ -1,6 +1,6 @@
 import shell from 'shell';
 
-import BrowserWindow from 'browser-window';
+import {BrowserWindow} from 'electron';
 import EventEmitter from 'events';
 import path from 'path';
 
@@ -65,7 +65,7 @@ class AppWindow extends EventEmitter {
    * @param {String} targetUrl
    */
   loadUrl(targetUrl) {
-    this.window.loadUrl(targetUrl);
+    this.window.loadURL(targetUrl);
   }
 
   /**

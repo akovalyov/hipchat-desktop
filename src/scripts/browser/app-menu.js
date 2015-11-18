@@ -1,4 +1,4 @@
-import Menu from 'menu';
+import {Menu} from 'electron';
 import EventEmitter from 'events';
 
 class AppMenu extends EventEmitter {

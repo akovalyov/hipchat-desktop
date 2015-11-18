@@ -26,7 +26,7 @@
   "crashReporter": {
     "productName": "Hipchat Desktop",
     "companyName": "FOSS",
-    "submitUrl": "http://localhost:1127/post"
+    "submitURL": "http://localhost:1127/post"
   },
   "updater": {
     "manifestUrl": "https://raw.githubusercontent.com/akovalyov/hipchat-desktop/deploy/src/package.json",

@@ -1,7 +1,7 @@
 var webview = document.getElementById('webview');
 var indicator = document.getElementsByClassName('loading-message')[0];
 var webframe = require('web-frame');
-var ipc = require('ipc');
+var ipc = require('electron').ipcRenderer;
 var initial = true;
 
 var loadstop = function () {

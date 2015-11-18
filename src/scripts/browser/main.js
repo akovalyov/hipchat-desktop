@@ -1,4 +1,4 @@
-import app from 'app';
+import {app} from 'electron';
 import yargs from 'yargs';
 
 import CrashReporter from 'crash-reporter';

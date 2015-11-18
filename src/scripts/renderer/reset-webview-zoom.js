@@ -1,6 +1,6 @@
 var Configstore = require('configstore');
 var webframe = require('web-frame');
-var ipc = require('ipc');
+var ipc = require('electron').ipcRenderer;
 
 var conf = new Configstore('hipchat-desktop', {
     zoom: webframe.getZoomFactor()
@@ -8,10 +8,12 @@ var conf = new Configstore('hipchat-desktop', {
 webframe.setZoomFactor(conf.get('zoom'));
 
 window.onload = function () {
-    HC.AppDispatcher.register('server-data', function (data) {
-        if ('message' in data) {
-            console.log(JSON.stringify(data));
-            ipc.send('message:received', 'Message received')
-        }
-    });
+    if (typeof HC !== 'undefined') {
+        HC.AppDispatcher.register('server-data', function (data) {
+            if ('message' in data) {
+                console.log(JSON.stringify(data));
+                ipc.send('message:received', 'Message received')
+            }
+        });
+    }
 };
