@@ -1,54 +1,64 @@
 <!doctype html>
 <html>
 <head>
-  <title>Hipchat Desktop</title>
-  <link rel="stylesheet" type="text/css" href="../styles/default.css">
+    <title>Hipchat Desktop</title>
+    <link rel="stylesheet" type="text/css" href="../styles/default.css">
 </head>
 <body>
-  <webview id="webview"
-  src="https://www.hipchat.com/chat"
-  allowpopups="on"
-  autosize="on"
-  minwidth="768"
-  minheight="1024"
-  preload="../scripts/renderer/reset-webview-zoom.js"
-  partition="persist:hipchat"
-  ></webview>
-  <div class="loading-message">
+<webview id="webview"
+         src="https://www.hipchat.com/chat"
+         allowpopups="on"
+         autosize="on"
+         minwidth="768"
+         minheight="1024"
+         preload="../scripts/renderer/reset-webview-zoom.js"
+         partition="persist:hipchat"
+        >
+</webview>
+<div class="loading-message">
     <div class="loading-outer">
-      <div class="loading-inner">
-        <div class="loading-pending">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-423 229.6 111.8 103.4" enable-background="new -423 229.6 111.8 103.4" xml:space="preserve">
+        <div class="loading-inner">
+            <div class="loading-pending">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-423 229.6 111.8 103.4" enable-background="new -423 229.6 111.8 103.4" xml:space="preserve">
           <g id="icon-hipchat-logo" stroke="#205081" fill="none">
             <path id="hipchat_smile" d="M-343.1,284.8c-9.9,11.2-24,11.2-24,11.2s-16.4-0.7-24-11.2" />
             <path id="hipchat_bubble" d="M-353.3,312.9l-3.5-2.5c-3.2,0.7-6.8,2-10.1,2c-22.5,0-40.9-15.3-40.9-34.1c0-18.8,18.3-34.1,40.9-34.1c22.5,0,40.9,15.3,40.9,34.1
             c0,10.6-8.1,20.3-18.1,26.8c0.4,1.4,1.7,4,3.1,5.8c0.7,0.9,7.6,6.5,7.6,7.6C-333.5,321-353.3,312.9-353.3,312.9z" />
           </g>
         </svg>
+            </div>
+            <div class="loading-failed">
+                <svg>
+                    <use xlink:href="#icon-hipchat-logo-sad"></use>
+                </svg>
+            </div>
         </div>
-        <div class="loading-failed">
-          <svg><use xlink:href="#icon-hipchat-logo-sad"></use></svg>
-        </div>
-      </div>
     </div>
+    <p class="status-message">Fetching resources from Hipchat server...</p>
+</div>
 
-  <script type="text/javascript" src="../scripts/renderer/default.js"></script>
-  <!-- Piwik -->
+<script type="text/javascript" src="../scripts/renderer/default.js"></script>
+<script type="text/javascript" src="../scripts/renderer/offline.js"></script>
+<!-- Piwik -->
 <script type="text/javascript">
-  var manifest = JSON.parse(require('fs').readFileSync('src/package.json', 'utf-8'));
-  var _paq = _paq || [];
-  _paq.push(['setCustomVariable', 1, 'appVersion',  manifest.version]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://piwik-akovalyov.rhcloud.com/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
+    var manifest = JSON.parse(require('fs').readFileSync('src/package.json', 'utf-8'));
+    var _paq = _paq || [];
+    _paq.push(['setCustomVariable', 1, 'appVersion', manifest.version]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "https://piwik-akovalyov.rhcloud.com/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
 </script>
-<noscript><p><img src="https://piwik-akovalyov.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img src="https://piwik-akovalyov.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt=""/></p></noscript>
 <!-- End Piwik Code -->
 </body>
 </html>
