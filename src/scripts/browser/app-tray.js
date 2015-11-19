@@ -24,7 +24,7 @@ class AppTray extends EventEmitter {
     // Set handlers and create the menu
     tray.setToolTip(settings.description);
     tray.setContextMenu(contextMenu);
-    tray.on('clicked', function() {
+    tray.on('click', function() {
       global.application.markTrayClear();
       global.application.onTrayClicked();
     });

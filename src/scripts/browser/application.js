@@ -78,13 +78,15 @@ class Application extends EventEmitter {
     if (this.mainWindow.window.isFocused()) {
       return;
     }
-    var image = 'tray-attention.png'
+    var image = 'tray-attention.png';
     this.tray.tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
   }
+
   markTrayClear() {
-    var image = 'tray.png'
+    var image = 'tray.png';
     this.tray.tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
   }
+
   assignEvents(menu) {
     // Handle application events
     menu.on('application:quit', ::app.quit);

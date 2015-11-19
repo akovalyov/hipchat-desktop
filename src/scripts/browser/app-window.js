@@ -56,6 +56,10 @@ class AppWindow extends EventEmitter {
         this.focus();
     });
 
+    browserWindow.on('focus', function(){
+        global.application.markTrayClear();
+    });
+
     return browserWindow;
   }
 
