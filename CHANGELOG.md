@@ -1,3 +1,6 @@
+0.0.1-alpha.3
+- Allow content to be loaded via HTTP
+
 0.0.1-alpha.2
 - Added Piwik
 - Added ability to monitor online/offline events
