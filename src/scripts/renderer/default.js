@@ -27,6 +27,16 @@ ipc.on('zoom:reset', function () {
 webview.addEventListener('console-message', function (e) {
     console.log('Guest page logged a message:', e.message);
 });
+
 webview.addEventListener('new-window', function (e) {
-    require('shell').openExternal(e.url);
+    var external = new RegExp('^((f|ht)tps?:)?//(?!' + 'hipchat.com'+ ')');
+    //open external links in browser but keep the same app for video/audio calls
+    if(!external.test(e.url)) {
+        require('shell').openExternal(e.url);
+    }
+    else{
+      var newWebview = document.createElement('webview');
+      document.body.appendChild(newWebview);
+      e.window.attach(newWebview);
+    }
 });

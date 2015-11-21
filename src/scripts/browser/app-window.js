@@ -1,6 +1,6 @@
 import shell from 'shell';
 
-import {BrowserWindow} from 'electron';
+import {BrowserWindow, dialog} from 'electron';
 import EventEmitter from 'events';
 import path from 'path';
 
@@ -54,6 +54,12 @@ class AppWindow extends EventEmitter {
 
     browserWindow.on('show', function(){
         this.focus();
+    });
+    browserWindow.on('close', function(e){
+        if(!global.application.forceQuit){
+          e.preventDefault();
+          this.hide();
+        }
     });
 
     return browserWindow;

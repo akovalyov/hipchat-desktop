@@ -23,13 +23,7 @@ class Application extends EventEmitter {
 
     this.manifest = manifest;
     this.options = options;
-
-    // Quit the app when all the windows are closed, except for darwin
-    app.on('window-all-closed', function() {
-      if (process.platform !== 'darwin') {
-        app.quit();
-      }
-    });
+    this.forceQuit = false;
 
     // Create and set the default menu
     this.menu = this.createMenu();
@@ -39,6 +33,21 @@ class Application extends EventEmitter {
     this.mainWindow = new AppWindow();
     this.mainWindow.loadUrl(`file://${path.resolve(__dirname, '..', '..', 'html', 'index.html')}`);
     this.tray = this.createTray();
+
+    // Quit the app when all the windows are closed, except for darwin
+    app.on('window-all-closed', function() {
+      if (process.platform !== 'darwin') {
+        app.quit();
+      }
+    });
+    app.on('before-quit', function (e) {
+      // Handle menu-item or keyboard shortcut quit here
+      if(!global.application.forceQuit){
+        e.preventDefault();
+        global.application.mainWindow.hide();
+      }
+    });
+    this.app = app;
   }
 
   /**
@@ -78,16 +87,24 @@ class Application extends EventEmitter {
     if (this.mainWindow.window.isFocused()) {
       return;
     }
-    var image = 'tray-attention.png'
+    var image = 'tray-attention.png';
     this.tray.tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
   }
   markTrayClear() {
-    var image = 'tray.png'
+    var image = 'tray.png';
     this.tray.tray.setImage(path.resolve(__dirname, '..', '..', 'images', image));
+  }
+
+  quit(){
+    this.forceQuit = true;
+    console.log('force quitting');
+    this.app.quit();
   }
   assignEvents(menu) {
     // Handle application events
-    menu.on('application:quit', ::app.quit);
+    menu.on('application:quit', function(){
+        global.application.quit();
+    });
     menu.on('application:focus', function() {
       global.application.mainWindow.show();
     });
