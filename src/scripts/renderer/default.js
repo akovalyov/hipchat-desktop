@@ -34,9 +34,4 @@ webview.addEventListener('new-window', function (e) {
     if(!external.test(e.url)) {
         require('shell').openExternal(e.url);
     }
-    else{
-      var newWebview = document.createElement('webview');
-      document.body.appendChild(newWebview);
-      e.window.attach(newWebview);
-    }
 });
