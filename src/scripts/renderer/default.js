@@ -29,9 +29,5 @@ webview.addEventListener('console-message', function (e) {
 });
 
 webview.addEventListener('new-window', function (e) {
-    var external = new RegExp('^((f|ht)tps?:)?//(?!' + 'hipchat.com'+ ')');
-    //open external links in browser but keep the same app for video/audio calls
-    if(!external.test(e.url)) {
-        require('shell').openExternal(e.url);
-    }
+    require('shell').openExternal(e.url);
 });
