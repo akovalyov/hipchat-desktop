@@ -28,7 +28,11 @@ Web applications have one limitation which is quite important for me - there is 
 
 It is possible thanks to atom electron project. This app is based on [really super kit](https://github.com/Aluxian/electron-superkit).
 
-NOTE: There is a known bug with Electron desktop notifications on Linux DE that may crash the app silently if notifications are clicked. Until this bug is resolved, do not click on notifications. You can track the progress in https://github.com/akovalyov/hipchat-desktop/issues/1
+
+#### What does not work.
+
+1. Clicking on notifications. There is a known bug with Electron desktop notifications on Linux DE that may crash the app silently if notifications are clicked. Until this bug is resolved, do not click on notifications. You can track the progress in https://github.com/akovalyov/hipchat-desktop/issues/1.
+2. Audio/Video calls. Currently hipchat web app opens new window for video call and internally relies on `window.opener` there. There is Electron/Chromium issue with that. You can track progress in https://github.com/akovalyov/hipchat-desktop/issues/1
 
 #### Installation
 
