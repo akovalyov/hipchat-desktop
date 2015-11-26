@@ -10,6 +10,10 @@ Please note, that this app is in early alpha, any issues/ideas/PRs are welcome!
 
 Not affiliated with Atlassian.
 
+#### Stack
+
+Atom/Electron framework, ES2015 + Babel transpiler, Gulp task runner.
+
 #### Why
 
 Currently Linux client for Hipchat has a bunch of old issues which are not solved by Atlassian.
@@ -36,13 +40,13 @@ It is possible thanks to atom electron project. This app is based on [really sup
 
 #### Installation
 
-````sh
+```sh
 $ git clone git@github.com:akovalyov/hipchat-desktop.git
 $ cd hipchat-desktop
 $ npm install
 #optional, for deb packaging
 $ bundle install --path vendor/bundle
-````
+```
 
 ### Launching
 
