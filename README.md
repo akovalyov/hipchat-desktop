@@ -49,3 +49,9 @@ $ bundle install --path vendor/bundle
 ```sh
 $ gulp watch:linux32 #or 64
 ```
+
+### Packaging
+
+```sh
+$ gulp pack
+```
