@@ -55,3 +55,9 @@ $ gulp watch:linux32 #or 64
 ```sh
 $ gulp pack
 ```
+
+### Publishing
+
+```sh
+$ gulp publish
+```
