@@ -1,3 +1,6 @@
+0.0.1-alpha.4
+- Updated to Electron v 0.36.10
+
 0.0.1-alpha.3
 - Allow content to be loaded via HTTP
 

@@ -18,7 +18,7 @@ Atom/Electron framework, ES2015 + Babel transpiler, Gulp task runner.
 
 Currently Linux client for Hipchat has a bunch of old issues which are not solved by Atlassian.
 The short list is:
-- [Bug](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/4013212-linux-client-is-missing-notification-area-icon) [with](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/4184974-linux-client-doesn-t-put-the-icon-in-the-system-tr) [trays](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/5525589-gnome-shell-system-tray-extension-for-hipchat-like)
+- [Multiple Bugs](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/4013212-linux-client-is-missing-notification-area-icon) [with](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/4184974-linux-client-doesn-t-put-the-icon-in-the-system-tr) [trays](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/5525589-gnome-shell-system-tray-extension-for-hipchat-like)
 
 - [Shortcuts don't work in non-English layout](https://help.hipchat.com/forums/138883-suggestions-ideas/suggestions/4566565-non-english-layout-does-not-let-copy-paste)
 
@@ -34,7 +34,7 @@ It is possible thanks to atom electron project. This app is based on [really sup
 
 #### What does not work.
 
-1. Clicking on notifications. There is a known bug with Electron desktop notifications on Linux DE that may crash the app silently if notifications are clicked. Until this bug is resolved, do not click on notifications. You can track the progress in [the next issue](https://github.com/akovalyov/hipchat-desktop/issues/1).
+~ 1. Clicking on notifications. There is a known bug with Electron desktop notifications on Linux DE that may crash the app silently if notifications are clicked. Until this bug is resolved, do not click on notifications. You can track the progress in [the next issue](https://github.com/akovalyov/hipchat-desktop/issues/1). ~ (Fixed in recent Electron)
 2. Audio/Video calls. Currently hipchat web app opens new window for video call and internally relies on `window.opener` there. There is Electron/Chromium issue with that. You can track progress in https://github.com/akovalyov/hipchat-desktop/issues/2
 3. Multiple accounts are not supported since I haven't determined the best way to handle the UI with multiple instances of the app.
 
